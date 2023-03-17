@@ -16,3 +16,13 @@ jobs:
       run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
     - name: Push the Docker image to Docker Hub
       run: docker push sacoefrancis/balckswan:${{ github.sha }}
+    - name: Deploy applications
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.BASTION_HOST }}
+        username: ${{ secrets.BASTION_USERNAME }}
+        key: ${{ secrets.BASTION_PRIVATE_KEY }}
+        envs: IMAGE_TAG
+        script: |
+          cd ${{ secrets.BASTION_TARGET_DIR }}
+          helm upgrade --install test-app -n test . -f ../andela-apps/andela-springboot/values.yaml
