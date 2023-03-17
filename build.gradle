@@ -2,9 +2,10 @@ plugins {
     id 'org.springframework.boot' version '2.7.5'
     id 'io.spring.dependency-management' version '1.0.15.RELEASE'
     id 'java'
-    id 'war'
+    id 'application'
 }
 
+mainClassName = 'com.example.demo.DemoApplication'
 group = 'com.example'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '11'
@@ -22,8 +23,18 @@ dependencies {
     implementation 'mysql:mysql-connector-java:8.0.27'
     implementation 'javax.persistence:javax.persistence-api:2.2'
     annotationProcessor 'org.projectlombok:lombok:1.18.22'
+
 }
 
 tasks.named('test') {
     useJUnitPlatform()
+}
+
+jar {
+    manifest {
+        attributes 'Main-Class': mainClassName
+    }
+    from {
+        configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
+    }
 }
