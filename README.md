@@ -32,7 +32,7 @@ step 5: Deploy the application
   --------------------------------------------------------------------------------------------------------------------------------------------------
 # Architecture Diagram
  
-![arch_diagram drawio (1)](https://user-images.githubusercontent.com/20705864/225959089-4139e296-2985-4347-8a78-4ff8f9180995.png)
-
+ 
+![arch_diagram drawio (2)](https://user-images.githubusercontent.com/20705864/225968305-ce0004d7-78cc-437b-b8a7-4baf7a8ba1a9.png)
 
 
