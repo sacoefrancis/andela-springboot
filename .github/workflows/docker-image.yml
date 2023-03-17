@@ -9,7 +9,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Build with Gradle
-      run: ./gradlew assemble
+      run: gradle clean build
     - name: Build the Docker image
       run: docker build -t sacoefrancis/balckswan:${{ github.sha }} .
     - name: Log in to Docker Hub
