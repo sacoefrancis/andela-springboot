@@ -3,8 +3,8 @@
   This is a simple springboot application with an api call (/live) for checking the database connection.If the connection is established it will return a message **"Well Done"** otherwise it will return **"Maintenance"** as a message.
 
 URL to Test the application 
-
 https://test.dotsolved.com/andela/live
+
 ----------------------------------------------------------------------------------------------------------------------------------------------
 # Deploying with GitHub Actions
 
