@@ -1,6 +1,6 @@
 # Springboot Application
 
-  This is a simple springboot application whith single api call (/live) for checking the database connection.If the connection is fine it will show message like "Well Done",otherwise it will show "Maintenance" as a message.
+  This is a simple springboot application with an api call (/live) for checking the database connection.If the connection is established it will return a message **"Well Done"** otherwise it will return **"Maintenance"** as a message.
 
 ----------------------------------------------------------------------------------------------------------------------------------------------
 # Deploying with GitHub Actions
@@ -17,7 +17,7 @@ To deploy this application to your own server, you can follow these steps:
   With these steps completed, you can now push changes to your forked repository and GitHub Actions will automatically deploy the changes to your server.
   
   ----------------------------------------------------------------------------------------------------------------------------------------------
-# Steps Invloved in Github Actions
+# Steps Involved in Github Actions
 
 step 1: Build With Gradle
 
